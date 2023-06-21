@@ -1,17 +1,45 @@
 import random
 import time
-def insertion(array):
+def insertion(array,increase = True):
     '''
     Insertion sort
     Return sorted array in ascending order
     '''
     for i in range(1,len(array)): # [1,5,3,7,0.5,10]
         j = i-1   # j = 0, 1,2
-        while j>=0 and array[j]>array[j+1]:# True, False,false
-            array[j+1],array[j]= array[j], array[j+1] # [1,5,5,7,0.5,10], same
-            print(array)
-            j -=1 
+        if increase:
+            while j>=0 and array[j]>array[j+1]:# True, False,false
+                array[j+1],array[j]= array[j], array[j+1] # [1,5,5,7,0.5,10], same
+                j -=1 
+        else:
+            while j>=0 and array[j]<array[j+1]:# True, False,false
+                array[j+1],array[j]= array[j], array[j+1] # [1,5,5,7,0.5,10], same
+                j -=1 
     return array
+
+
+def remove_duplicity(array):
+    '''
+    remove duplicity
+    return an array with unique number
+    '''
+    sorted = insertion(array)
+    result = []
+    for i in range(1, len(sorted)):
+        if sorted[i-1]==sorted[i]:
+            pass
+        else:
+            result.append(sorted[i])
+
+    return result
+
+
+
+
+
+
+
+
 
 
 
@@ -33,19 +61,13 @@ def insertion_sort(array):
                 array[i-1] = array[i]
     return array
 
-numbers = [100,10, 20, 1, -10, 5,-5,0,6]
+numbers = [100,10, 20, 1, -10, 5,-5,0,6,10, 20]
 
-starttime = time.time()
-print(starttime)
-print(insertion(numbers))
-endtime = time.time()
-print(endtime-starttime)
+print(insertion(numbers,increase=False))
+
+print(remove_duplicity(numbers))
 
 
-starttime2 = time.time()
-print(insertion_sort(numbers))
-endtime2 = time.time()
-print(endtime2-starttime2)
 
 
             
