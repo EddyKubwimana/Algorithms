@@ -6,12 +6,11 @@ def insertion(array):
     Return sorted array in ascending order
     '''
     for i in range(1,len(array)): # [1,5,3,7,0.5,10]
-        key = array[i] # 5,3,7
         j = i-1   # j = 0, 1,2
-        while j>0 and array[j]>key:# True, False,false
-            array[j+1]= array[j] # [1,5,5,7,0.5,10], same
-            j -=1 # 0
-        array[j+1] = key # 3,[1,3,5,7,0.5,10], same
+        while j>=0 and array[j]>array[j+1]:# True, False,false
+            array[j+1],array[j]= array[j], array[j+1] # [1,5,5,7,0.5,10], same
+            print(array)
+            j -=1 
     return array
 
 
@@ -31,13 +30,14 @@ def insertion_sort(array):
             if array[i-1]>array[i]:
                 
                 checker = True
-                array[i-1], array[i] = array[i], array[i-1]
+                array[i-1] = array[i]
     return array
 
-numbers = [6.441882568521997, 9.129469771028411, 8.085007999916666, 0.6830121262619548, 5.719945981926121, 3.3625403059347168, 0.0619248581640619, 1.2868810913334217, 4.704578031092196, 2.8700843094668347]
+numbers = [100,10, 20, 1, -10, 5,-5,0,6]
+
 starttime = time.time()
 print(starttime)
-print(insertion_sort(numbers))
+print(insertion(numbers))
 endtime = time.time()
 print(endtime-starttime)
 
