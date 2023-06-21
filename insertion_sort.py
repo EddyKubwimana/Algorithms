@@ -1,4 +1,13 @@
 import random
+def insertion(array):
+    for i in range(1,len(array)):
+        key = array[i]
+        j = i-1
+        while j>0 and array[j]>key:
+            array[i] = array[j]
+            array[j]= key
+
+
 
 def insertion_sort(array):
     '''
@@ -16,9 +25,11 @@ def insertion_sort(array):
                 print( array[i-1], array[i])
                 checker = True
                 array[i-1], array[i] = array[i], array[i-1]
-            else:
-        
+
+            if array[i-1]<array[i]:
+                checker = True
                 break
+
 
     
     return array
