@@ -2,8 +2,10 @@ def printif(number):
     if number == 0:
         return number
     else:
-        return  printif(number-1)
+        number=  printif(number-1)
+        print(number, end =" ")
+        return number+1
         
     
-print(printif(10))
+print(printif(100))
         
