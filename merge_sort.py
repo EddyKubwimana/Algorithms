@@ -30,21 +30,26 @@ def merge_sort(array):
     - Return a sorted array
     - Use nlogn runtime in the worst case scenario
     '''
-
-    
-
-
-
-
+    if len(array)==1:
+        return array
+    else:
+        mid = len(array)//2
+        left = array[:mid]
+        right= array[mid:]
         
-        
+        left = merge_sort(left)
+        right = merge_sort(right)
+
+        merged = merge(left, right)
+
+        return merged
+
+       
 
 #.....................testing the function written above.....................#
 
-list1= [1,6,9,11]
-list2 = [3,4,5,10]
-
-print(merge(list1,list2))
+numbers= [0,-100,1.7, 80, 467, -1000]
+print(merge_sort(numbers))
 
 
 
