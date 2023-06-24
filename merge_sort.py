@@ -49,9 +49,6 @@ def merge_sort(array):
 
 #.....................testing the function written above.....................#
 
-numbers= [0,-100,1.7, 80, 467, -1000]
-print(merge_sort(numbers))
-print(insertion_sort(numbers))
 
 
 

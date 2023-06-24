@@ -1,5 +1,5 @@
-from merge_sort import merge_sort
 from insertion_sort import insertion_sort
+from merge_sort import merge_sort
 import time
 import random
 
@@ -17,7 +17,7 @@ endM = time.time()
 print("Merge-sort took : ", endM-startM)
 
 
-#time for insertion_sort
+# time for insertion_sort
 
 startI= time.time()
 print(insertion_sort(numbers))
