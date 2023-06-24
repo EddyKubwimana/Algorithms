@@ -30,6 +30,9 @@ def insertion_sort(array,ascending = True):
          return array
 
 print(insertion_sort([20, -20, 20, 30, -1000], ascending=False))
+print(insertion_sort([20, -20, 20, 30, -1000]))
+
+
 
 
             
