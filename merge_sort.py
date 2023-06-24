@@ -1,4 +1,5 @@
 # Divide and conquer algorithm
+from insertion_sort import insertion_sort
 def merge(left,right):
     '''- Merge two arrays together
        - Returns a combined array
@@ -50,6 +51,7 @@ def merge_sort(array):
 
 numbers= [0,-100,1.7, 80, 467, -1000]
 print(merge_sort(numbers))
+print(insertion_sort(numbers))
 
 
 
