@@ -7,17 +7,27 @@ def binarySearch(array, value):
     - Return a message if the value is not found or not to inform the user
     - Use n log n runtime algorithm
     '''
-    mid = int((len(array)/2))
-    if array[mid] == value:
+    
+    array.sort()
+    mid = (len(array)//2)
+    if len(array)==0:
+        return "The list is empty, not found"
+    
+    if array[mid]==value:
         return "Found"
-    elif mid == 0:
+    elif mid ==0 and array[mid] != value:
         return "Not found"
-       
+    
     else:
-        if array[mid]>value:
-            binarySearch(array[:mid])
-        else:
-            binarySearch(array[mid:])
 
-numbers  = [1,3, 60, 65, 8]
-print(binarySearch(numbers,60))
+        if value> array[mid]:
+            return binarySearch(array[mid:],value)
+        else:
+            return binarySearch(array[:mid],value)
+    
+
+numbers  = [1,0,8,3,100] # [0,1,3,8,100]
+nombre = []
+
+print(binarySearch(numbers,9))
+print(binarySearch(nombre, 8))
