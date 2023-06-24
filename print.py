@@ -1,15 +1,11 @@
-def printif(number):
-    '''
-    print a number given a certain limit
-    return
-    '''
-    if number == 0:
-        return number
-        
+def printf(number):
+    '''Print numbers from 0 to n given number'''
+
+    if number==0:
+       print(number, end = ",")
+       return number
     else:
-        printif(number-1)
-        print(number-1, end = ",")
-        return number
-        
-print(printif(100))
-        
+       printf(number-1)
+       print(number, end = ",")
+    
+printf(10)
