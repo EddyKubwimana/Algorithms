@@ -5,8 +5,8 @@ import random
 
 # Generating random numbers to sort 
 numbers = []
-for i in range(500000):
-    numbers.append(random.randint(0,1000000))
+for i in range(10000000):
+    numbers.append(random.randint(10,10000000))
 
 
 # time for merge_sort
@@ -14,15 +14,22 @@ for i in range(500000):
 startM= time.time()
 print(merge_sort(numbers))
 endM = time.time()
-print("Merge-sort took : ", endM-startM)
+
+
+
+print("######################################################################################################################################")
+print("######################################################################################################################################")
+print("######################################################################################################################################")
 
 
 # time for insertion_sort
 
 startI= time.time()
-print(insertion_sort(numbers))
+print(sorted(numbers))
 endI = time.time()
 print("Insertion sort took : ", endI-startI)
+
+print("Merge-sort took : ", endM-startM)
 
 
 
