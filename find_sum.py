@@ -1,6 +1,6 @@
 # find if a list contains at least two values that sum up to given y number:
 # the algorithm has to be of order O( n log n )
-
+from merge_sort import merge_sort
 def difference(array, value):
        '''
        - Takes an array
@@ -13,7 +13,19 @@ def difference(array, value):
        return array
 
 def find_sum(array, value):
-    array.sort()
+       
+       array_prime = difference(array, value)
+       array.extend(array_prime)
+    
+       sorted_array = merge_sort(array)
+
+       for i in range(1,len(sorted_array)):
+              if sorted_array[i-1]== sorted_array[i]:
+                     return True
+       return False
+
+
+       
     
 
 
@@ -22,4 +34,6 @@ def find_sum(array, value):
 # -----------------------------Testing------------------------------------------------------------------------#
 
 array = [1,7,9]
-print(difference(array, 5))
+
+print(find_sum(array,8))
+
