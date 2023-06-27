@@ -1,4 +1,5 @@
-# Writing algorithm that use 
+# Writing algorithm that use  divide and conquer method to check whether an array is sorted in ascending order
+
 
 def spotsorted(array):
     '''
@@ -32,6 +33,18 @@ def merge_check(right):
     else: 
       return True
 
+numbers = []
+numbers2 = []
+for i in range(9):
+    numbers.append(10+i)
+    if i ==5:
+       numbers2.append(-100)
+    else:
+        numbers2.append(10+i)
 
-numbers = [3,10, 11,20,50,10]
+
+     
 print(spotsorted(numbers))
+print(spotsorted(numbers2))
+print(numbers)
+print(numbers2)
