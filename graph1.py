@@ -132,9 +132,19 @@ class Digraph(object):
 
 
     #.......................................Testing ....................................#
-start = Node("Shombo")
-end = Node("Buhiga")
-connection = Edge(start, end)
-    
-print(connection)
+node1 = Node("Shombo")
+node2 = Node("Buhiga")
+node3 = Node("Bugenyuzi")
+connection1 = Edge(node1, node2)
+connection2 = Edge(node1, node3)
+
+
+graph = Digraph()
+graph.addNode(node1)
+graph.addNode(node2)
+graph.addNode(node3)
+graph.addEdge(connection1)
+graph.addEdge(connection2)
+print(graph)
+print(graph.hasNode(node1))
 
