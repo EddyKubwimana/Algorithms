@@ -83,6 +83,44 @@ class Digraph(object):
              self.edges[src].append(dest)
 
 
+     def childrenOf(self,node):
+         ''' 
+         - Return the list of destination that you can access  through the node
+
+         '''
+         try:
+             return self.edges[node]
+         except:
+             raise KeyError("The location does not exist in the system")
+     
+     def hasNode(self, node):
+         '''
+         - Return True if the node exist in the system
+         - Return False if the node does not exist
+         '''
+         return node in self.edges
+     
+     def getNode(self, name):
+         '''
+         - Return the node given a name of it
+         
+         '''
+         for n in self.edges:
+             if n.getName()== name:
+                 return n
+             raise NameError(name)
+
+     def __str__(self):
+         result = ""
+         for src in self.edges:
+             
+             for dest in  self.edges[src]:
+                 
+                 result = result+ src.getName()+ "--------------->"+ dest.getName() + "\n"
+    
+         return result
+
+
 
 
          
