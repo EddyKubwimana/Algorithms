@@ -20,8 +20,8 @@ class Node(object):
 
 class Edge(object):
     
-    def __init__(self, src, dest):
-        self.scr= src
+    def  __init__ (self, src, dest):
+        self.src= src
         self.dest = dest
 
     def getSource(self):
@@ -29,7 +29,7 @@ class Edge(object):
         - Return the source Node
         '''
 
-        return self.scr
+        return self.src
     
     def getDestination(self):
         
@@ -40,15 +40,15 @@ class Edge(object):
     
     def __str__(self):
         
-        return self.scr.getName()+ " ---> "+ self.dest.getName()
+        return self.src.getName()+ " ---> "+ self.dest.getName()
     
 
 
 
     #.......................................Testing ....................................#
-
-    start = Node("Shombo")
-    end = Node("Buhiga")
-    connection = Edge(start, end)
+start = Node("Shombo")
+end = Node("Buhiga")
+connection = Edge(start, end)
     
+print(connection)
 
