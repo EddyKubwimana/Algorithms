@@ -119,6 +119,16 @@ class Digraph(object):
                  result = result+ src.getName()+ "--------------->"+ dest.getName() + "\n"
     
          return result
+     
+
+
+class Graph(Digraph):
+    def addEdge(self, edge):
+        Digraph.addEdge(self,edge)
+        rev = Edge(edge.getDestination(), edge.getSource())
+        Digraph.addEdge(self, rev)
+
+    
 
 
 
@@ -138,13 +148,13 @@ node3 = Node("Bugenyuzi")
 connection1 = Edge(node1, node2)
 connection2 = Edge(node1, node3)
 
-
-graph = Digraph()
+graph = Graph()
 graph.addNode(node1)
 graph.addNode(node2)
 graph.addNode(node3)
+
 graph.addEdge(connection1)
 graph.addEdge(connection2)
 print(graph)
-print(graph.hasNode(node1))
+
 
