@@ -6,7 +6,7 @@ class Node(object):
     def getName(self):
         ''' 
         - Return the name of the object
-        
+
         '''
         return self.name
     
@@ -16,3 +16,32 @@ class Node(object):
         
         '''
         return self.name
+    
+
+class Edge(object):
+    
+    def __init__(self, src, dest):
+        self.scr= src
+        self.dest = dest
+
+    def getSource(self):
+        '''
+        - Return the source Node
+
+        '''
+
+        return self.scr
+    
+    def getDestination(self):
+        
+        '''
+        - Return the destination node
+
+        '''
+
+        return self.dest
+    
+    def __str__(self):
+        
+        return self.scr + " ---> "+ self.dest
+
