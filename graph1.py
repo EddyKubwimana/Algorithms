@@ -1,4 +1,7 @@
 class Node(object):
+    '''
+     - Create a name object for a place
+    '''
     
     def __init__(self, name):
         self.name = name
@@ -19,6 +22,9 @@ class Node(object):
     
 
 class Edge(object):
+    '''
+    - Create a Edge object representing two places : Source and Destination
+    '''
     
     def  __init__ (self, src, dest):
         self.src= src
@@ -41,6 +47,10 @@ class Edge(object):
     def __str__(self):
         
         return self.src.getName()+ " ---> "+ self.dest.getName()
+    
+
+class Digraph(Object):
+
     
 
 
