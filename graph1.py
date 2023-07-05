@@ -24,6 +24,7 @@ class Node(object):
 class Edge(object):
     '''
     - Create a Edge object representing two places : Source and Destination
+
     '''
     
     def  __init__ (self, src, dest):
@@ -49,7 +50,44 @@ class Edge(object):
         return self.src.getName()+ " ---> "+ self.dest.getName()
     
 
-class Digraph(Object):
+class Digraph(object):
+     '''
+     - Create a place and its associated places
+     '''
+
+     def __init__(self):
+         self.edges = {}
+
+     
+     def addNode(self, node):
+         ''' 
+         - Add a place in the graph
+
+         '''
+         if node in self.edges:
+             raise ValueError("Duplicate Node")
+         else:
+             self.edges[node]=[]
+
+
+     def addEdge(self, edge):
+         '''
+         - Add a edge between two areas
+         '''
+         src = edge.getSource()
+         dest = edge.getDestination()
+
+         if not ( src in self.edges and dest in self.edges):
+             raise ValueError("The node does not exists in edge")
+         else:
+             self.edges[src].append(dest)
+
+
+
+
+         
+         
+         
 
     
 
