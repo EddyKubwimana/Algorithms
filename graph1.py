@@ -27,7 +27,6 @@ class Edge(object):
     def getSource(self):
         '''
         - Return the source Node
-
         '''
 
         return self.scr
@@ -36,12 +35,20 @@ class Edge(object):
         
         '''
         - Return the destination node
-
         '''
-
         return self.dest
     
     def __str__(self):
         
-        return self.scr + " ---> "+ self.dest
+        return self.scr.getName()+ " ---> "+ self.dest.getName()
+    
+
+
+
+    #.......................................Testing ....................................#
+
+    start = Node("Shombo")
+    end = Node("Buhiga")
+    connection = Edge(start, end)
+    
 
