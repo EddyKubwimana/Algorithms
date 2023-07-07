@@ -157,4 +157,8 @@ graph.addEdge(connection1)
 graph.addEdge(connection2)
 print(graph)
 
+number = [5,6]
+n = [1,6,9,10]
+print(number+n)
+
 

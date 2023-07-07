@@ -19,7 +19,7 @@ def spotsorted(array):
         right = spotsorted(array[mid:])
         return merge_check(left) and merge_check(right)
 
-def merge_check(right):
+def merge_check(right, left):
     '''
     - Takes an array and compare two successive number in an array 
     - Return True if they are sorted in ascending order
