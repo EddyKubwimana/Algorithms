@@ -10,11 +10,13 @@ class Roulette(object):
         self.ball = None
     
     def spin(self):
+        '''Spin the the roulette and return the chosen pocket'''
         self.ball = random.choice(self.pockets)
         return self.ball
 
 
     def betPocket(self, pocket, amt):
+        '''Allow to bet and return if the loss or win of the player'''
         if str(self.ball) == str(pocket):
             return amt*self.pockets0dd
         
@@ -35,4 +37,3 @@ for i in range(40):
 
     
 
-    
