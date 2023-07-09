@@ -51,7 +51,9 @@ def merge_sort(array):
 
 
 
+numbers = [100,1,2]
 
+print(merge_sort(numbers))
 
 
 
