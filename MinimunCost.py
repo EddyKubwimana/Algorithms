@@ -1,6 +1,7 @@
 class Node(object):
     def __init__(self,data):
         self.next = None
+        self.prev = None
         self.data = data
 
 
@@ -9,16 +10,21 @@ class circularList(object):
     def __init__(self):
         self.head = None
         self.tail = None
+        self.prev = None
+        self.size = 0
 
     
     def append(self, item):
+        self.size += 1
         new_node = Node(item)
         if self.head is None:
             self.head = new_node
-            self.tail = new_node
-        else:
-            self.tail.next = new_node
-            self.tail = self.tail.next
+            self.tail = self.head
+            return
+        curr_node = self.head
+        while curr_node.next:
+            if curr_node.next is None:
+                curr_node.next = new_node
 
     def appendlist(self, arr):
         for i in range(len(arr)):
@@ -31,6 +37,7 @@ class circularList(object):
              arr.append(curr.data)
              curr= curr.next
          return arr
+    
          
 
 
@@ -47,12 +54,10 @@ class circularList(object):
 numbers = [1,6,9,10,11]
 
 newList = circularList()
-newList.append(1)
-newList.append(2)
-newList.append(3)
-newList.append(5)
-
+newList.appendlist(numbers)
+print(newList.head.next)
 print(newList.printList())
+print(newList.size)
         
 
 
