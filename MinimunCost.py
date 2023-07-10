@@ -1,47 +1,61 @@
-def minimunCost(N, start, End, cost):
-    # right cost
-    Newcost = [cost[start-1]]+cost[:start-1]+cost[start:][::-1]
-    print(Newcost)
-    total_right = 0 
-    total_left = 0
-    if start<= End:
-        for i in range(start-1, End-1):
-            total_right += cost[i]
-
-       
-    if start>End:
-        start = 0
-        for i in range(start, End):
-            total_right+= Newcost[i]
-
-    if  start <= End and End-len(cost)>=0 and start==0:
-         for i in range(End-1, start-1, -1):
-            total_left+= cost[i]
+class Node(object):
+    def __init__(self,data):
+        self.next = None
+        self.data = data
 
 
-    if start <=End:
-        End = End-start
-        start =0
-        
-        for i in range(start, End):
-            total_left += Newcost[i]
-            print(total_left)
+class circularList(object):
 
-
-
-
-
-
-    return total_right, total_left
-
+    def __init__(self):
+        self.head = None
+        self.tail = None
 
     
-N = 4
-start = 4
-finish = 1
-ticket_cost = [1, 2, 2, 4 ]
+    def append(self, item):
+        new_node = Node(item)
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            self.tail.next = new_node
+            self.tail = self.tail.next
 
-print(minimunCost(N,start,finish,ticket_cost))
+    def appendlist(self, arr):
+        for i in range(len(arr)):
+            self.append(arr[i])
+
+    def printList(self):
+         arr = []
+         curr= self.head
+         while curr:
+             arr.append(curr.data)
+             curr= curr.next
+         return arr
+         
+
+
+
+            
+
+
+       
+    
+
+
+
+
+numbers = [1,6,9,10,11]
+
+newList = circularList()
+newList.append(1)
+newList.append(2)
+newList.append(3)
+newList.append(5)
+
+print(newList.printList())
+        
+
+
 
             
 
