@@ -1,13 +1,23 @@
 #Train min cost given a list of station and changing price for one station to another
 
 def minCost(arr,start,end):
-    right_cost = arr[start:]+arr[-end:]
-    left_cost = arr[:len(arr)-start]+arr[start:]
-    end_right= end-start
-    start = 0
-    return right_cost, left_cost, end_right
+    start = start-1
+    end = end-start-1
+    arr = arr[start:]+arr[:start]
+    
+    # right -cost
+    right_cost = 0
+
+    for i in range(end):
+        right_cost += arr[i]
+        
+    
+    return arr, right_cost
+
+
+    
 
 
 numbers = [1,6,9,85,0,9]
-print(minCost(numbers,1,3))
+print(minCost(numbers,2,4))
 
